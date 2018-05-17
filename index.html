@@ -19,8 +19,13 @@
         transform: scale(2);
         z-index: 3;
         position: relative;
-        margin: auto;       
+        margin: auto;
+        box-shadow: 0 0 30px;       
       }
+
+      .jumbotron {
+            background:url(img/white-background.jpg);
+        }
     </style>
 </head>
 
@@ -34,11 +39,19 @@
   </nav>
 
   <div class="jumbotron">
-    <div class="container">
+    <div class="container" style="color: azure">
       <h1 class="display-3 mt-5">歡迎來到又誠作品集網頁</h1>
-      <p>這裡是我在大學期間所做的作品，以下有各作品之簡短說明以及連結按鈕，各作品中所使用的前端技術包括HTML、JavaScript、CSS、JQuery、BootStrap</p>
+      <p>這裡是我在大學期間所做的作品，以下有各作品之簡短說明以及連結按鈕。<br>各作品中所使用的前端技術包括：</p>
+      <ul>
+        <li>HTML</li>
+      <li>CSS</li>
+      <li>BootStrap</li>
+      <li>JavaScript</li>
+      <li>JQuery</li>
+      </ul>
+      
       <p>
-        <a class="btn btn-primary btn-lg" href="/CSS/Resume.html" role="button">我的個人履歷 &raquo;</a>
+        <a class="btn btn-dark btn-lg" href="/CSS/Resume.html" role="button">我的個人履歷 &raquo;</a>
       </p>
     </div>
   </div>
