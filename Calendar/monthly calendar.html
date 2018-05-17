@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>月曆</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    td:hover {
+      background-color: darkseagreen;
+    }
+
+    li:hover {
+      background-color: rgba(212, 228, 212, 0.979);
+    }
+  </style>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container-fluid" style="font-family:微軟正黑體">
+    <div class="ml-3" style="height:15px;background-color:rgb(83, 114, 83);"></div>
+    <div class="row mt-1 ml-3 " style="background-color:rgba(212, 228, 212, 0.979);margin-right:1px;" role="alert">
+      <div class="col-2">
+        <button type="button" class="btn btn-outline-secondary mt-3 ml-4" id="BtLeft" style="border:0px; color:black">
+          < </button>
+      </div>
+      <div class="col-8">
+        <span>
+          <h3 class="text-center" id="Month">Month</h3>
+          <h6 class="text-center" id="Year">Year</h6>
+        </span>
+        <!-- Button trigger modal -->
+
+
+        <!-- Modal -->
+        <!-- 新增的Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <span>
+                  <h4>新增</h4>
+                </span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <!-- 內容 -->
+                <div class="row">
+                  <div class="col-3 mt-3">
+                    <span>
+                      <b>內容：</b>
+                    </span>
+                  </div>
+                  <div class="col-9 mt-2">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="input_something" aria-describedby="helpId" placeholder="標題">
+                    </div>
+                  </div>
+                </div>
+                <!-- 日期 -->
+                <div class="row">
+                  <div class="col-3 mt-3">
+                    <span>
+                      <b>日期：</b>
+                    </span>
+                  </div>
+                  <div class="col-9 mt-2">
+                    <input type="date" class="form-control" name="" id="input_Date" style="border-style:none">
+                  </div>
+                </div>
+                <!-- 開始時間 -->
+                <div class="row">
+                  <div class="col-3 mt-3">
+                    <span>
+                      <b>開始時間：</b>
+                    </span>
+                  </div>
+                  <div class="col-9 mt-2">
+                    <input type="time" class="form-control" id="input_fromHr" style="border-style:none">
+                  </div>
+                </div>
+                <!-- 結束時間 -->
+                <div class="row">
+                  <div class="col-3 mt-3">
+                    <span>
+                      <b>結束時間：</b>
+                    </span>
+                  </div>
+                  <div class="col-9 mt-2">
+                    <input type="time" class="form-control" id="input_toHr" style="border-style:none">
+                  </div>
+                </div>
+                <!-- 顏色 -->
+                <div class="row">
+                  <div class="col-3 mt-3">
+                    <span>
+                      <b>顏色：</b>
+                    </span>
+                  </div>
+                  <div class="col-9 mt-2">
+                    <input type="color" class="form-control" id="input_color" style="border-style:none" style="height:35px;">
+                  </div>
+                </div>
+                <!-- 地點 -->
+                <div class="row">
+                  <div class="col-3 mt-3">
+                    <span>
+                      <b>地點：</b>
+                    </span>
+                  </div>
+                  <div class="col-7 mt-2">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="input_map" aria-describedby="helpId" placeholder="輸入地點">
+                    </div>
+                  </div>
+                  <div class="col-2 mt-2">
+                    <button type="button" class="btn btn-link" id="search">搜尋</button>
+                  </div>
+                </div>
+                <!-- 地圖 -->
+                <div class="row">
+                  <div class="col">
+                    <div style="height: 300px ; width: 300px;" id="map"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- 結束 -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="save">儲存</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 新增的Modal -->
+        <!-- 修改的Modal -->
+        <div class="modal fade" id="myModalalter" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <span>
+                  <h4>修改</h4>
+                </span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <!-- 內容 -->
+                <div class="row">
+                  <div class="col-3 mt-2">
+                    <span>
+                      <b>內容：</b>
+                    </span>
+                  </div>
+                  <div class="col-9 mt-2">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="input_something_alter" aria-describedby="helpId" placeholder="標題">
+                    </div>
+                  </div>
+                </div>
+                <!-- 日期 -->
+                <div class="row">
+                  <div class="col mt-3">
+                    <span>
+                      <b>日期：</b>
+                    </span>
+                  </div>
+                  <div class="col mt-2">
+                    <input type="date" class="form-control" name="" id="input_Date_alter" style="border-style:none">
+                  </div>
+                </div>
+                <!-- 開始時間 -->
+                <div class="row">
+                  <div class="col mt-3">
+                    <span>
+                      <b>開始時間：</b>
+                    </span>
+                  </div>
+                  <div class="col mt-2">
+                    <input type="time" class="form-control" id="input_fromHr_alter" style="border-style:none">
+                  </div>
+                </div>
+                <!-- 結束時間 -->
+                <div class="row">
+                  <div class="col mt-3">
+                    <span>
+                      <b>結束時間：</b>
+                    </span>
+                  </div>
+                  <div class="col mt-2">
+                    <input type="time" class="form-control" id="input_toHr_alter" style="border-style:none">
+                  </div>
+                </div>
+                <!-- 顏色 -->
+                <div class="row">
+                  <div class="col mt-3">
+                    <span>
+                      <b>顏色：</b>
+                    </span>
+                  </div>
+                  <div class="col mt-2">
+                    <input type="color" class="form-control" id="input_color_alter" style="border-style:none" style="height:35px;">
+                  </div>
+                </div>
+                <!-- 地圖 -->
+                <div class="row">
+                  <div class="col">
+                    <div style="height: 300px ; width: 300px;" id="map"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- 結束 -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="delete">刪除</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="alter">修改</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 修改的Modal -->
+      </div>
+      <div class="col-1">
+        <button type="button" class="btn mt-3" data-toggle="modal" data-target="#myModal" style="background-color: rgb(135, 182, 135);">
+          新增
+        </button>
+      </div>
+      <div class="col-1">
+        <button type="button" class="btn btn-outline-secondary mt-3 ml-4" id="BtRight" style="border:0px; color:black"> > </button>
+      </div>
+    </div>
+    <div class="row ml-1 text-center" style="color:darkgreen">
+      <div class="col">
+        <table class="table table-bordered" id="table">
+          <tr>
+            <th>星期日</th>
+            <th>星期一</th>
+            <th>星期二</th>
+            <th>星期三</th>
+            <th>星期四</th>
+            <th>星期五</th>
+            <th>星期六</th>
+          </tr>
+          <tbody id="table_item">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQiX_j1Fz8VfooVbMbQiyVrZy6HlgHbJw&callback=initMap"
+    type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <script>
+    //--------------------------地圖------------------------------------
+    var map;
+    var marker = null;
+    var center = { lat: 24.7571075, lng: 120.952429 };
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+    directionsDisplay.setMap(map);
+
+    $(function () {
+      map = new google.maps.Map(
+        document.getElementById('map'), {
+          center: center,
+          zoom: 13
+        });
+    })
+
+    $("#search").click(function () {
+      geocoder = new google.maps.Geocoder();
+      var address = $("#input_map").val();
+      var image = {
+        url: "https://cdn2.iconfinder.com/data/icons/IconsLandVistaMapMarkersIconsDemo/256/MapMarker_PushPin_Right_Pink.png",
+        scaledSize: new google.maps.Size(35, 35)
+      };
+      geocoder.geocode({ 'address': address }, function (results, status) {
+        map.setCenter(results[0].geometry.location);
+        if (marker != null) {
+          marker.setMap(null);
+          marker = null;
+        }
+        marker = new google.maps.Marker({
+          position: results[0].geometry.location,
+          map: map,
+          icon: image
+        });
+      });
+    })
+    //--------------------------做月曆，製表格---------------------------
+    var today = new Date();
+    var btn;
+    function GetYearMonthDay() {
+      var table = document.getElementById("table_item");
+      document.getElementById("Month").innerText = today.getMonth() + 1 + "月";
+      document.getElementById("Year").innerText = today.getFullYear() + "年";
+      today.setDate(1);                             //設定目前日期等於1號，把Date抓出當月1號
+      var DonMonth = today.getMonth();              //設定當月月份後存到DonMonth，後面判斷是否為當月日期。              
+      while (today.getDay() != 0) {                 //如果每月第一天不等於星期日，日期就減一，直到減到星期日。      !=0  => 就是設定表格星期日為第一格
+        today.setDate(today.getDate() - 1);         //取得今天日期
+      }
+      for (var i = 0; i < 6; i++) {
+        var tr = document.createElement("tr");
+        tr.style = "height:90px;"
+        for (var j = 0; j < 7; j++) {
+          var td = document.createElement("td");
+          td.innerText = today.getDate();  //
+          if (today.getMonth() != DonMonth)        // 如果不是當月日期，將td表格 改為灰色
+          {
+            td.style = "color:gainsboro;";
+          }
+          //(------------------新增當天行事曆資料--------------------
+          var key = today.getFullYear() + "-" +                            //組合字串，以符合yyyy-mm-dd的格式。 
+            ((today.getMonth() < 10) ? "0" + (today.getMonth() + 1) : (today.getMonth() + 1)) +
+            "-" + ((today.getDate() < 10) ? "0" + today.getDate() : today.getDate());
+
+          if (JSON.parse(localStorage.getItem(key)) != null) {
+            var times = 0;
+            var $ul = $("<ul>").css("list-style-type", "none").css("padding", "0px").css("margin", "0px").css("text-align", "left");
+            for (var item of JSON.parse(localStorage.getItem(key)).schedules) {
+              var $li = $("<li>").text(item.something)
+                .css("color", item.color)
+                .attr("data-toggle", "modal")
+                .attr("data-target", "#myModalalter")
+                .attr("id", key + "," + times)
+                .click(function () {
+                  var Tokey = this.id.split(",");
+                  var newTokey = JSON.parse(localStorage.getItem(Tokey[0]));
+                  $("#input_something_alter").val(newTokey.schedules[Tokey[1]].something);
+                  $("#input_Date_alter").val(newTokey.key);
+                  $("#input_fromHr_alter").val(newTokey.schedules[Tokey[1]].fomeHR);
+                  $("#input_toHr_alter").val(newTokey.schedules[Tokey[1]].toHR);
+                  $("#input_color_alter").val(newTokey.schedules[Tokey[1]].color);
+                  $("#alter").val(this.id);
+                  $("#delete").val(this.id);
+                });
+              times++;
+              $li.appendTo($ul);
+              // var li = document.createElement("li");
+              // li.innerText = item.something;
+              // ul.appendChild(li);
+            }
+            $ul.appendTo(td);
+          }
+          //------------------新增當天行事曆資料--------------------)
+          tr.appendChild(td);
+          //document.write(today.getDate() + " ")
+          today.setDate(today.getDate() + 1);
+        }
+        table.appendChild(tr);
+        //document.write("<br/>");
+      }
+    }
+
+    function ClearTable() {
+      today.setMonth(today.getMonth() - 1);
+      var table = document.getElementById("table_item");
+      while (table.hasChildNodes()) {
+        table.removeChild(table.firstChild);
+      }
+    }
+
+    GetYearMonthDay();
+    document.getElementById("BtRight").onclick = function () {
+      today.setMonth(today.getMonth() + 1);
+      ClearTable();
+      GetYearMonthDay();
+    }
+    document.getElementById("BtLeft").onclick = function () {
+      today.setMonth(today.getMonth() - 1);
+      ClearTable();
+      GetYearMonthDay();
+    }
+    //-------------------------行事曆-------------------------
+
+    $("#save").click(function () {
+      var date = {
+        key: $("#input_Date").val(),
+        schedules: []
+      };
+
+      var schedule = {
+        something: $("#input_something").val(),
+        fomeHR: $("#input_fromHr").val(),
+        toHR: $("#input_toHr").val(),
+        color: $("#input_color").val()
+      };
+
+      if (localStorage.getItem($("#input_Date").val()) != null) {
+        var data = JSON.parse(localStorage.getItem($("#input_Date").val()));
+        data.schedules.push(schedule)
+        localStorage.setItem($("#input_Date").val(), JSON.stringify(data));
+      }
+      else {
+        date.schedules.push(schedule);
+        var newdate = JSON.stringify(date);
+        localStorage.setItem($("#input_Date").val(), newdate);
+      }
+      ClearTable();
+      GetYearMonthDay();
+    })
+
+    $("#alter").click(function () {
+      var Tokey = this.value.split(",");
+      var newTokey = JSON.parse(localStorage.getItem(Tokey[0]));
+      newTokey.schedules.splice(Tokey[1], 1);
+      localStorage.setItem(Tokey[0], JSON.stringify(newTokey));
+      var date = {
+        key: $("#input_Date_alter").val(),
+        schedules: []
+      };
+
+      var schedule = {
+        something: $("#input_something_alter").val(),
+        fomeHR: $("#input_fromHr_alter").val(),
+        toHR: $("#input_toHr_alter").val(),
+        color: $("#input_color_alter").val()
+      };
+
+      if (localStorage.getItem($("#input_Date_alter").val()) != null) {
+        var data = JSON.parse(localStorage.getItem($("#input_Date_alter").val()));
+        data.schedules.push(schedule)
+        localStorage.setItem($("#input_Date_alter").val(), JSON.stringify(data));
+      }
+      else {
+        date.schedules.push(schedule);
+        var newdate = JSON.stringify(date);
+        localStorage.setItem($("#input_Date_alter").val(), newdate);
+      }
+      ClearTable();
+      GetYearMonthDay();
+    })
+
+    $("#delete").click(function () {
+      var Tokey = this.value.split(",");
+      var DeleteTokey = JSON.parse(localStorage.getItem(Tokey[0]));
+      DeleteTokey.schedules.splice(Tokey[1], 1);
+      localStorage.setItem(Tokey[0], JSON.stringify(DeleteTokey));
+      ClearTable();
+      GetYearMonthDay();
+    })
+
+
+
+     // var buttons = document.getElementsByTagName("td");    //抓所有Button
+    // for (var i = 0; i < buttons.length; i++) {
+    //   var button = buttons[i];
+    //   button.onclick = function () {
+    //     btn = event.srcElement;
+    //     $('#myModal').modal('show');
+    //   }
+    // }
+    // this.document.getElementById("save").onclick = function () {
+    //   var Matter = document.getElementById("To-Do").value;
+    //   btn.innerText += "\n" + Matter;
+    // };
+  </script>
+
+</body>
+
+</html>
