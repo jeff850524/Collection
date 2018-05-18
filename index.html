@@ -32,12 +32,25 @@
     .navbar-inverse {
       background-color: black;
     }
+
+    #BtnHover{
+      border-radius:50px 25px;
+      box-shadow: 0 0 50px;
+      background-color: black;
+      color: white;
+    }
+
+     #BtnHover:hover{
+      box-shadow: 0 0 50px;
+      background-color:white;
+      color: black;     
+    }
   </style>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-md navbar-inverse fixed-top text-center">
-    <a class="navbar-brand " href="#" style="color: white">又誠的作品集</a>
+    <a class="navbar-brand" href="#" style="color: white;">★又誠的作品集★</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -58,7 +71,7 @@
       </ul>
 
       <p>
-        <a class="btn btn-dark btn-lg" href="/CSS/Resume.html" role="button">我的個人履歷 &raquo;</a>
+        <a class="btn btn-lg" href="/CSS/Resume.html" role="button" id="BtnHover">我的個人履歷 &raquo;</a>
       </p>
     </div>
   </div>
@@ -70,7 +83,7 @@
         <img src="img/巴哈擷取01.PNG" alt="" width="350" height="200" id="image">
         <p class="mt-3">依照巴哈姆特首頁來練習前端的刻板技巧，本作品當中所使用的技術包含了html、Css、BootStrap等</p>
         <p class="mt-3">
-          <a class="btn btn-secondary" href="BAHA/BAHA.html" role="button">View details &raquo;</a>
+          <a class="btn" href="BAHA/BAHA.html" role="button" id="BtnHover">View details &raquo;</a>
         </p>
       </div>
       <div class="col-md-4">
@@ -78,7 +91,7 @@
         <img src="img/BootStrapPratice擷取.PNG" alt="" width="350" height="200" id="image">
         <p class="mt-3">依照設計師的樣式練習切版技巧，本作品當中所使用的技術包含了html、Css、BootStrap等</p>
         <p class="mt-3">
-          <a class="btn btn-secondary" href="BootStrapsPractice/draft.html" role="button">View details &raquo;</a>
+          <a class="btn" href="BootStrapsPractice/draft.html" role="button" id="BtnHover">View details &raquo;</a>
         </p>
       </div>
       <div class="col-md-4">
@@ -86,7 +99,7 @@
         <img src="img/BuildSchool首頁擷取.PNG" alt="" width="350" height="200" id="image">
         <p class="mt-3">依照Build School的官網首頁來練習前端的刻板技巧，本作品當中所使用的技術包含了html、Css、BootStrap等</p>
         <p class="mt-3">
-          <a class="btn btn-secondary" href="Build-school/build-school.html" role="button">View details &raquo;</a>
+          <a class="btn" href="Build-school/build-school.html" role="button" id="BtnHover">View details &raquo;</a>
         </p>
       </div>
     </div>
@@ -98,7 +111,7 @@
         <p class="mt-3">依照行事曆做出基本功能，包含了新增、刪除、修改等功能，並且使用localStorage來存取使用者輸入的資料，右上角新增按鈕，可新增資料，修改及刪除則點選當天活動即跳出視窗。 本作品當中所使用的技術包含了html、Css、BootStrap、JacaScript、JQuery等
         </p>
         <p class="mt-3">
-          <a class="btn btn-secondary" href="Calendar/monthly calendar.html" role="button">View details &raquo;</a>
+          <a class="btn" href="Calendar/monthly calendar.html" role="button" id="BtnHover">View details &raquo;</a>
         </p>
       </div>
       <div class="col-md-4">
@@ -108,7 +121,7 @@
         <br>
         <br>
         <p class="mt-3">
-          <a class="btn btn-secondary" href="GuessNum/guess1A1B.html" role="button">View details &raquo;</a>
+          <a class="btn" href="GuessNum/guess1A1B.html" role="button" id="BtnHover">View details &raquo;</a>
         </p>
       </div>
       <div class="col-md-4">
@@ -118,7 +131,7 @@
         <br>
         <br>
         <p class="mt-3">
-          <a class="btn btn-secondary" href="SuperPassword/SuperPassword.html" role="button">View details &raquo;</a>
+          <a class="btn" href="SuperPassword/SuperPassword.html" role="button" id="BtnHover">View details &raquo;</a>
         </p>
       </div>
     </div>
@@ -129,7 +142,7 @@
         <img src="img/溫度轉換擷取.PNG" alt="" width="350" height="200" id="image">
         <p class="mt-3">依照溫度變換，可由攝氏轉成華氏，或是華氏轉成攝氏，本作品當中所使用的技術包含了html、Css、BootStrap、JacaScrip等</p>
         <p class="mt-3">
-          <a class="btn btn-secondary" href="temperature/temperature.html" role="button">View details &raquo;</a>
+          <a class="btn" href="temperature/temperature.html" role="button" id="BtnHover">View details &raquo;</a>
         </p>
       </div>
       <div class="col-md-4">
@@ -137,7 +150,7 @@
         <img src="img/Google交通費用擷取02.PNG" alt="" width="350" height="200" id="image">
         <p class="mt-3">使用者可點選兩點位置，點選完畢後右邊將顯示計算後的交通費用，本作品當中所使用的技術包含了html、Css、BootStrap、GoogleAPI等</p>
         <p class="mt-3">
-          <a class="btn btn-secondary" href="CommunicationCalculate/預估交通費用計算.html" role="button">View details &raquo;</a>
+          <a class="btn" href="CommunicationCalculate/預估交通費用計算.html" role="button" id="BtnHover">View details &raquo;</a>
         </p>
       </div>
       <div class="col-md-4">
