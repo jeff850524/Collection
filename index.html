@@ -74,18 +74,20 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-inverse fixed-top text-center">
-    <a class="navbar-brand" href="#" style="color: white;">
+  <div id="ToHome">
+    <nav class="navbar navbar-expand-md navbar-inverse fixed-top text-center">
+      <a class="navbar-brand" href="#" style="color: white;">
         <i class="fab fa-angellist"></i> 又誠的作品集</a>
-    <div style="margin-left: 60rem">
-      <a class="navbar-brand" href="#" style="color: white; text-align: right;" id="ClickHome">
-        <i class="fas fa-home"></i> Home</a>
-      <a class="navbar-brand" href="#" style="color: white; text-align: right;" id="ClickWork">
-        <i class="fas fa-book"></i> Work</a>
-      <a class="navbar-brand" href="#" style="color: white; text-align: right;" id="ClickContact">
-        <i class="far fa-comment-alt"></i> Contact</a>
-    </div>
-  </nav>
+      <div style="margin-left: 60rem">
+        <a class="navbar-brand" href="#ToHome" style="color: white; text-align: right;" id="ClickHome">
+          <i class="fas fa-home"></i> Home</a>
+        <a class="navbar-brand" href="#ToWork" style="color: white; text-align: right;" id="ClickWork">
+          <i class="fas fa-book"></i> Work</a>
+        <a class="navbar-brand" href="#ToContact" style="color: white; text-align: right;" id="ClickContact">
+          <i class="far fa-comment-alt"></i> Contact</a>
+      </div>
+    </nav>
+  </div>
 
   <div class="jumbotron">
     <div class="container" style="color: azure">
@@ -107,7 +109,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="ToWork">
     <div class="row">
       <div class="col-md-4">
         <h2>巴哈姆特網頁</h2>
@@ -195,7 +197,7 @@
     </div>
   </div>
   <!-- /container -->
-  <footer class="container-fluid text-center navbar-inverse py-1 mt-3" style="color: white">
+  <footer class="container-fluid text-center navbar-inverse py-1 mt-3" style="color: white" id="ToContact">
     <p class="mt-2">
       &copy; 2018 Make by[鄭又誠]
       <br>Email：fidio524@gmail.com
