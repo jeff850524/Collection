@@ -1,228 +1,182 @@
+
 <!doctype html>
-<html lang="en">
-
 <head>
-  <title>又誠的作品集</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-    crossorigin="anonymous">
-  <style>
-    /*  */
-
-    .back-to-top {
-      display: none;
-      position: fixed;
-      bottom: 5em;
-      right: 0;
-      text-decoration: none;
-      color: white;
-      background: black;
-      font-size: 20px;
-      padding: 10px 20px;
-
-    }
-
-    .back-to-top:hover {
-      box-shadow: 0 0 50px;
-      background-color: white;
-      text-decoration: none;
-      color: black;
-    }
-
-    body {
-      font-family: "Microsoft YaHei";
-      background-image: url(img/rain.gif);
-    }
-
-    #image{
-    -webkit-transition: transform 0.5s; /* For Safari 3.1 to 6.0 */
-    transition: transform 0.5s;
-    }
-
-    #image:hover {
-      transform: scale(2);
-      z-index: 3;
-      position: relative;
-      margin: auto;
-      box-shadow: 0 0 30px;
-    }
-
-    .jumbotron {
-      background: url(img/white-background.jpg);
-
-    }
-
-    .navbar-inverse {
-      background-color: black;
-    }
-
-    #BtnHover {
-      border-radius: 50px 25px;
-      box-shadow: 0 0 50px;
-      background-color: black;
-      color: white;
-    }
-
-    #BtnHover:hover {
-      box-shadow: 0 0 50px;
-      background-color: white;
-      color: black;
-    }
-  </style>
+        <meta http-equiv="refresh" content="4 ; url=WORKS/works.html">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 </head>
 
-<body>
-  <div id="ToHome">
-    <nav class="navbar navbar-expand-md navbar-inverse fixed-top text-center">
-      <a class="navbar-brand" href="#" style="color: white;">
-        <i class="fab fa-angellist"></i> 又誠的作品集</a>
-      <div style="margin-left: 60em">
-        <a class="navbar-brand" href="#ToHome" style="color: white; text-align: right;" id="ClickHome">
-          <i class="fas fa-home"></i> Home</a>
-        <a class="navbar-brand" href="#ToWork" style="color: white; text-align: right;" id="ClickWork">
-          <i class="fas fa-book"></i> Work</a>
-        <a class="navbar-brand" href="#ToContact" style="color: white; text-align: right;" id="ClickContact">
-          <i class="far fa-comment-alt"></i> Contact</a>
-      </div>
-    </nav>
-  </div>
+<html lang="en">
+<style>
+    h1.ml8 {
+        font-weight: 900;
+        font-size: 4.5em;
+        color: #2b2918;
+        width: 3em;
+        height: 3em;
+    }
 
-  <div class="jumbotron">
-    <div class="container" style="color: azure">
-      <h1 class="display-3 mt-5 animated infinite pulse" style="animation-iteration-count:2">歡迎來到又誠作品集網頁</h1>
-      <p class=" animated infinite zoomInDown" style="animation-duration: 1.2s;animation-iteration-count:1">這裡是我在大學期間所做的作品，以下有各作品之簡短說明以及連結按鈕。
-        <br>各作品中所使用的前端技術包括：</p>
-      <ul>
-        <li class="animated infinite zoomInUp" style="animation-duration: 1.2s;animation-iteration-count:1">HTML</li>
-        <li class="animated infinite zoomInUp" style="animation-duration: 1.5s;animation-iteration-count:1">CSS</li>
-        <li class="animated infinite zoomInUp" style="animation-duration: 1.8s;animation-iteration-count:1">BootStrap</li>
-        <li class="animated infinite zoomInUp" style="animation-duration: 2.1s;animation-iteration-count:1">JavaScript</li>
-        <li class="animated infinite zoomInUp" style="animation-duration: 2.4s;animation-iteration-count:1">JQuery</li>
-      </ul>
+    .ml8 .letters-container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        height: 1em;
+    }
 
-      <p>
-        <a class="btn btn-lg animated infinite zoomInUp" style="animation-duration: 2.7s;animation-iteration-count:1" href="https://www.cakeresume.com/s--P_rG9DpMTUlN-zAU-wOrRA--/fidio524"
-          role="button" id="BtnHover">我的個人履歷 &raquo;</a>
-      </p>
-    </div>
-  </div>
+    .ml8 .letters {
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        line-height: 0.7em;
+        right: -0.12em;
+        top: -0.2em;
+    }
 
-  <div class="container" id="ToWork">
-    <div class="row">
-      <div class="col-md-4">
-        <h2>巴哈姆特網頁</h2>
-        <img src="img/巴哈擷取01.PNG" alt="" width="350" height="200" id="image" class="wow flash">
-        <p class="mt-3">依照巴哈姆特首頁來練習前端的刻板技巧，本作品當中所使用的技術包含了html、Css、BootStrap等</p>
-        <p class="mt-3">
-          <a class="btn" href="BAHA/BAHA.html" role="button" id="BtnHover">View details &raquo;</a>
-        </p>
-      </div>
-      <div class="col-md-4">
-        <h2>BootStrap刻板</h2>
-        <img src="img/BootStrapPratice擷取.PNG" alt="" width="350" height="200" id="image">
-        <p class="mt-3">依照設計師的樣式練習切版技巧，本作品當中所使用的技術包含了html、Css、BootStrap等</p>
-        <p class="mt-4">
-          <a class="btn" href="BootStrapsPractice/draft.html" role="button" id="BtnHover">View details &raquo;</a>
-        </p>
-      </div>
-      <div class="col-md-4">
-        <h2>BuildSchool首頁刻板</h2>
-        <img src="img/BuildSchool首頁擷取.PNG" alt="" width="350" height="200" id="image">
-        <p class="mt-3">依照Build School的官網首頁來練習前端的刻板技巧，本作品當中所使用的技術包含了html、Css、BootStrap等</p>
-        <p class="mt-3">
-          <a class="btn" href="Build-school/build-school.html" role="button" id="BtnHover">View details &raquo;</a>
-        </p>
-      </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-md-4">
-        <h2>行事曆</h2>
-        <img src="img/行事曆擷取01.PNG" alt="" width="350" height="200" id="image">
-        <p class="mt-3">依照行事曆做出基本功能，包含了新增、刪除、修改等功能，並且使用localStorage來存取使用者輸入的資料，右上角新增按鈕，可新增資料，修改及刪除則點選當天活動即跳出視窗。 本作品當中所使用的技術包含了html、Css、BootStrap、JavaScriptt、JQuery等
-        </p>
-        <p class="mt-3">
-          <a class="btn" href="Calendar/monthly calendar.html" role="button" id="BtnHover">View details &raquo;</a>
-        </p>
-      </div>
-      <div class="col-md-4">
-        <h2>Trello卡片刻板</h2>
-        <img src="img/Trello卡片擷取.PNG" alt="" width="350" height="200" id="image">
-        <p class="mt-3">依照Trello卡片的新增卡片來練習前端的刻板技巧，本作品當中所使用的技術包含了html、BootStrap、CSS等</p>
-        <br>
-        <br>
-        <p class="mt-3">
-          <a class="btn" href="Trello/Trello.html" role="button" id="BtnHover">View details &raquo;</a>
-        </p>
-      </div>
-      <div class="col-md-4">
-        <h2>終極密碼</h2>
-        <img src="img/SuperPassword.PNG" alt="" width="350" height="200" id="image">
-        <p class="mt-3">依照終極密碼的遊戲，刻出基本框架後，做出該遊戲邏輯判斷，本作品當中所使用的技術包含了html、CSS、BootStrap、JavaScriptt、JQuery等</p>
-        <br>
-        <br>
-        <p class="mt-3">
-          <a class="btn" href="SuperPassword/SuperPassword.html" role="button" id="BtnHover">View details &raquo;</a>
-        </p>
-      </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-md-4">
-        <h2>溫度轉換</h2>
-        <img src="img/溫度轉換擷取.PNG" alt="" width="350" height="200" id="image">
-        <p class="mt-3">依照溫度變換，可由攝氏轉成華氏，或是華氏轉成攝氏，本作品當中所使用的技術包含了html、Css、BootStrap、JavaScript等</p>
-        <p class="mt-3">
-          <a class="btn" href="temperature/temperature.html" role="button" id="BtnHover">View details &raquo;</a>
-        </p>
-      </div>
-      <div class="col-md-4">
-        <h2>預估交通費用</h2>
-        <img src="img/Google交通費用擷取02.PNG" alt="" width="350" height="200" id="image">
-        <p class="mt-3">使用者可點選兩點位置，點選完畢後右邊將顯示計算後的交通費用，本作品當中所使用的技術包含了html、Css、BootStrap、GoogleAPI等</p>
-        <p class="mt-3">
-          <a class="btn" href="CommunicationCalculate/預估交通費用計算.html" role="button" id="BtnHover">View details &raquo;</a>
-        </p>
-      </div>
-      <div class="col-md-4">
-        <h2>猜數字</h2>
-        <img src="img/GuessNum擷取.PNG" alt="" width="350" height="200" id="image">
-        <p class="mt-3">依照猜數字的遊戲，刻出基本框架後，做出該遊戲邏輯判斷，本作品當中所使用的技術包含了html、BootStrap、JavaScriptt、JQuery等</p>
-        <p>
-          <a class="btn" href="GuessNum/guess1A1B.html" role="button" id="BtnHover">View details &raquo;</a>
-        </p>
-      </div>
-    </div>
-  </div>
-  <!-- /container -->
-  <footer class="container-fluid text-center navbar-inverse py-1 mt-3" style="color: white" id="ToContact">
-    <p class="mt-2">
-      &copy; 2018 Make by[鄭又誠]
-      <br>Email：fidio524@gmail.com
-    </p>
-  </footer>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <!-- back to top -->
-  <script src="vendor/jquery.back-to-top.js" type="text/javascript"></script>
+    .ml8 .bang {
+        font-size: 1.4em;
+        top: auto;
+        left: -0.06em;
+    }
 
-  <a href="#" class="back-to-top">
-    <i class="fas fa-chevron-up"></i>
-  </a>
+    .ml8 .circle {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+    }
+
+    .ml8 .circle-white {
+        width: 3em;
+        height: 3em;
+        border: 2px dashed white;
+        border-radius: 2em;
+    }
+
+    .ml8 .circle-dark {
+        width: 3em;
+        height: 3em;
+        background-color:#e3e5f6;
+        border-radius: 5em;
+        z-index: 1;
+    }
+
+    .ml8 .circle-dark-dashed {
+        border-radius: 3.2em;
+        background-color: transparent;
+        border: 2px dashed #e3e5f6;
+        width: 3.2em;
+        height: 3.2em;
+    }
+
+</style>
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link src="/CSS/loading.css/">
+    <link src="/JavaScript/Untitled-1.js"/> -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+</head>
+
+<body style="background-color:#18170a" id="loading">
+    <div class="mb-3">
+    <h1 class="ml8">
+        <span class="letters-container">
+            <span class="letters letters-left text-center" style="z-index:3; padding-left:700px;">Hi</span>
+            <span class="letters bang">!</span>
+        </span>
+        <span class="circle circle-white"></span>
+        <span class="circle circle-dark"></span>
+        <span class="circle circle-container">
+            <span class="circle circle-dark-dashed"></span>
+        </span>
+    </h1>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 class="text-center animated infinite bounceInUp mb-1" style="color: #e3e5f6 ; animation-duration: 3s;animation-iteration-count:1 ;"><b></b> Welcome to my portfolio</h1>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>anime.timeline({ loop: true })
+            .add({
+                targets: '.ml8 .circle-white',
+                scale: [0, 3],
+                opacity: [1, 0],
+                easing: "easeInOutExpo",
+                rotateZ: 360,
+                duration: 1100
+            }).add({
+                targets: '.ml8 .circle-container',
+                scale: [0, 1],
+                duration: 1100,
+                easing: "easeInOutExpo",
+                offset: '-=1000'
+            }).add({
+                targets: '.ml8 .circle-dark',
+                scale: [0, 1],
+                duration: 1100,
+                easing: "easeOutExpo",
+                offset: '-=600'
+            }).add({
+                targets: '.ml8 .letters-left',
+                scale: [0, 1],
+                duration: 1200,
+                offset: '-=550'
+            }).add({
+                targets: '.ml8 .bang',
+                scale: [0, 1],
+                rotateZ: [45, 15],
+                duration: 1200,
+                offset: '-=1000'
+            }).add({
+                targets: '.ml8',
+                opacity: 0,
+                duration: 1000,
+                easing: "easeOutExpo",
+                delay: 1400
+            });
+
+        anime({
+            targets: '.ml8 .circle-dark-dashed',
+            rotateZ: 360,
+            duration: 8000,
+            easing: "linear",
+            loop: true
+        });</script>
+    <script>
+        
+        setTimeout("$('#loading').hide(5000)",5000);
+    </script>
 </body>
+
 
 </html>
